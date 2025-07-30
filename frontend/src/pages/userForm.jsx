@@ -1,7 +1,7 @@
 import React from 'react'
-import { Grid, Input, Typography} from "@mui/material";
+import { Button, Grid, Input, Typography} from "@mui/material";
 
-function userForm(props) {
+function UserForm(props) {
   return (
    <Grid
     container
@@ -13,7 +13,9 @@ function userForm(props) {
     }}>
         <Grid item xs={12}>
             <Typography component={'h1'} 
-            sx={{color: '#000000'}}>User Form</Typography>
+            sx={{color: '#000000',
+                fontSize: '40px'
+            }}>User Form</Typography>
         </Grid>
 
         <Grid item xs={12} sm={6} sx={{display: 'flex'}}>
@@ -22,9 +24,8 @@ function userForm(props) {
             sx={{
                 color: '#000000',
                 marginRight: '20px',
-                fontSize: '100px',
                 width: '100px',
-                display: 'block'
+                display: 'block',
             }}>ID</Typography>
 
             <Input
@@ -37,9 +38,43 @@ function userForm(props) {
                 value={''}
                 onChange={e => {}}/>
         </Grid>
+
+        <Grid item xs={12} sm={6} sx={{display: 'flex'}}>
+            <Typography component={'label'}
+            htmlFor="id"
+            sx={{
+                color: '#000000',
+                marginRight: '20px',
+                width: '100px',
+                display: 'block'
+            }}>Name</Typography>
+
+            <Input
+                type ="text"
+                id='name'
+                name="name"
+                sx={{
+                    width: '400px'
+                }}
+                value={''}
+                onChange={e => {}}/>
+        </Grid>
+
+        <Button sx={{
+            margin:'auto',
+            marginBottom: '20px',
+            backgroundColor: '#000000',
+            marginLeft: '15px',
+            marginTop: '20px',
+
+            '&:hover': {
+                opacity: '0.7',
+                backgroundColor: '#00c6e6',
+            }
+        }}> Add </Button>
     
    </Grid>
   )
 }
 
-export default userForm
+export default UserForm
